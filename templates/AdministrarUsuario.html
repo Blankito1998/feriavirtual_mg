@@ -1,0 +1,40 @@
+{% extends 'BaseAdministrador.html' %}
+{% load static %}
+{% block content %}
+
+<div>
+<br>
+
+<table width="100%" border="0" cellpadding="2">
+    <tr>
+        <td>
+            <a class="button btnSalir" href="{% url 'registrarUsuario' %}">
+              <img  src="{% static 'image/agregar.png' %}" style="width:300px;">
+            </a>
+        </td>
+
+        <td>
+              <a class="button btnSalir" href="{% url 'listarUsuario' %}">
+              <img  src="{% static 'image/listar.png' %}" style="width:300px;">
+            </a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Presiona la imagen de arriba para agregar un usuario
+        </td>
+
+        <td>
+            Presiona la imagen de arriba para listar los usuarios existentes
+        </td>
+    </tr>
+</table>
+
+<table>
+
+
+</div>
+
+
+
+{% endblock %}

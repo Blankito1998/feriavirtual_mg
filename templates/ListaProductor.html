@@ -1,0 +1,57 @@
+{% extends 'BaseAdministrador.html' %}
+{% block content %}
+
+<center>
+    <form method="GET">
+
+
+    <input type="number" name="idProductor">
+    <label> Buscar Productor : </label>
+    <button type="submit" > buscar </button>
+
+
+
+
+
+
+    </form>
+
+
+       <table class="table table-dark" style="width:400px ;height: 400px;">
+
+            <thead>
+          <tr>
+              <th>Id Ingreso Producto</th>
+              <th>Precio por unidad</th>
+              <th>Cantidad</th>
+              <th>Id Producto</th>
+              <th>Rut / Pasaporte</th>
+              <th> Activo </th>
+          </tr>
+
+            {% for p in productos %}
+
+          <tbody>
+            <tr>
+
+                <td> {{ p.idingresoproducto  }}  </td>
+                <td> {{ p.precioporunidad  }}  </td>
+                <td> {{ p.cantidad }}  </td>
+                <td> {{ p.idproducto.idproducto }}  </td>
+                <td> {{ p.rutopasaporte_id }}  </td>
+                <td> {{ p.activo}}  </td>
+            </tr>
+
+
+          </tbody>
+
+            {% endfor %}
+
+        </thead>
+
+
+        </table>
+
+</center>
+
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends 'AdministrarUsuario.html' %}
+
+{% block content %}
+
+
+
+
+<div align="center">
+    <form action="" method="POST" class="crudUser">
+		{% csrf_token %}
+        <br>
+        <div>
+        <label> Ingrese el rut/pasaporte: </label>
+		<input type="number"  name="rut" >
+        <br>
+        <div>
+        <label> Ingrese el digito verificador: </label>
+		<input type="number"  name="digito" >
+        <br>
+        <div>
+        <label> Ingrese el Primer nombre: </label>
+		<input type="text"  name="pnombre" >
+        <br>
+        <label> Ingrese el Segun nombre: </label>
+		<input type="text"  name="snombre" >
+            <br>
+        <label> Ingrese el apellido paterno: </label>
+		<input type="text"  name="ap" >
+            <br>
+        <label> Ingrese el apellido materno: </label>
+		<input type="text"  name="am" >
+            <br>
+        <label> Ingrese el correo: </label>
+		<input type="email"  name="correo" placeholder="correo@gmail.com">
+            <br>
+        <label> Ingrese la contraseña: </label>
+		<input type="password"  name="contrasenia" >
+        <br>
+        <label> Rol del Usuario </label>
+        <select name="rol">
+            <option value=1 selected> Administrador </option>
+            <option value=2> Productor </option>
+            <option value=3> Cliente Externo  </option>
+            <option value=4> Cliente Interno </option>
+            <option value=5> Transportista </option>
+            <option value=6> Consultor </option>
+
+        </select>
+
+        </div>
+
+
+        <br>
+        <button type="submit" class="btn btn-warning">Guardar</button>
+        <a type="button" class="btn btn-primary" href="{% url 'listarUsuario' %}">Cancelar</a>
+
+	</form>
+</div>
+
+
+
+
+
+
+
+{% endblock %}

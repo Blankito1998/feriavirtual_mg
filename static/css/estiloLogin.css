@@ -1,0 +1,113 @@
+h1 {
+	font-size: 45px;
+	padding: 15px;
+	height: 60px;
+	padding: 30px;
+	text-align: center;
+	display: inline-block;
+}
+
+
+p {
+	font-size: 25px;
+}
+
+label {
+
+  display: inline-block;
+  font-size: 15px;
+}
+
+.formulario {
+	background: #28a745;
+	border-radius: 15px;
+	padding: 100px;
+	width: 50%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
+
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 12px;
+
+}
+
+.col-75 {
+  float: left;
+  width: 50%;
+  margin-top: 6px;
+}
+
+
+input[type=email],
+input[type=password] {
+  width: 250px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+ .button {
+  	padding: 10px 50px;
+  	text-align: center;
+  	text-decoration: black;
+  	font-size: 15px;
+  	cursor: pointer;
+ 	color: black;
+ 	margin-top: 8%;
+ }
+
+
+
+@media (max-width: 650px) {
+   .col-25, .col-75,input {
+    width: 100%;
+    margin-top: 0;
+    margin-left: -38px;
+  }
+}
+
+#contenedor {
+float: left;
+width: 804px;
+}
+
+#tabla1 {
+float: left;
+width: 400px;
+}
+
+#tabla1 table {
+text-align: center;
+}
+
+#tabla1 table tr td {
+width: 100px
+}
+
+#tabla2 {
+float: left;
+width: 400px;
+}
+
+#tabla2 table {
+text-align: center;
+}
+
+#tabla2 table tr td {
+width: 100px
+}

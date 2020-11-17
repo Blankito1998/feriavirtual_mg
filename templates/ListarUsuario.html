@@ -1,0 +1,58 @@
+{% extends 'AdministrarUsuario.html' %}
+{% load static %}
+{% block content %}
+
+    <br>
+    <br>
+       <form method="GET">
+
+
+        <input type="number" name="rut">
+        <button type="submit" > Buscar Usuario  </button>
+
+    </form>
+    <br>
+    <br>
+  <h2>Lista de usuarios existentes</h2>
+
+  <table class="table table-dark">
+    <thead>
+      <tr>
+        <th>Rut</th>
+          <th>Digito Verificador</th>
+          <th>Primer Nombre</th>
+          <th>Segundo Nombre</th>
+          <th>Apellido Paterno</th>
+          <th>Apellido Materno</th>
+          <th>Correo Electronico</th>
+
+        <th>Editar</th>
+          <th>Eliminar</th>
+
+      </tr>
+    </thead>
+
+      {% for u in usuarios %}
+    <tbody>
+      <tr>
+        <td>{{ u.rutopasaporte }}</td>
+          <td>{{ u.dv }}</td>
+          <td>{{ u.nombre1 }}</td>
+          <td>{{ u.nombre2 }}</td>
+          <td>{{ u.appaterno }}</td>
+          <td>{{ u.apmaterno }}</td>
+          <td>{{ u.correo }}</td>
+
+          <td>
+              <a type="button" href="{% url 'edicionUsuario' u.rutopasaporte %}" class="btn"><img  src="{% static 'image/editar.png' %}" style="width:40px;"></a>
+          </td>
+          <td>
+              <a type="button" class="btn" href="{% url 'eliminarUsuario'  u.rutopasaporte %}"><img  src="{% static 'image/eliminar.png' %}" style="width:40px;"></a>
+          </td>
+      </tr>
+    </tbody>
+  {% endfor %}
+  </table>
+
+
+{% endblock %}

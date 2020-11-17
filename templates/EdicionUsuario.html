@@ -1,0 +1,17 @@
+{% extends 'AdministrarUsuario.html' %}
+{% block content %}
+<br>
+    <br>
+<div align="center">
+    <form action="" method="POST" class="crudUser">
+		{% csrf_token %}
+		<table>
+			{{form.as_table}}
+		</table>
+        <br>
+        <button type="submit" class="btn btn-warning">Editar</button>
+        <a type="button" class="btn btn-primary" href="{% url 'listarUsuario' %}">Cancelar</a>
+
+	</form>
+</div>
+{% endblock %}

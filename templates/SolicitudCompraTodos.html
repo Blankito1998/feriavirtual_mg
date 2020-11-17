@@ -1,0 +1,77 @@
+{% extends 'BaseAdministrador.html' %}
+{% block content %}
+
+    <br>
+    <br>
+    <br>
+<center>
+    <form method="GET">
+
+
+        <input type="number" name="filtro">
+        <button type="submit" > Buscar cliente  </button>
+
+    </form>
+
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+<div>
+
+
+
+        <table class="table table-dark" style="width:400px ;height: 400px;">
+
+            <thead>
+          <tr>
+              <th>Id Solicitud</th>
+              <th>Cantidad</th>
+              <th>Direccion</th>
+              <th>Fecha Inicio</th>
+              <th>Fecha Termino</th>
+              <th>Id Producto</th>
+              <th>Rut / Pasaporte</th>
+              <th>Activo</th>
+          </tr>
+
+            {% for l in solicitud %}
+
+          <tbody>
+            <tr>
+
+                <td> {{ l.idsolicitud }}  </td>
+                <td> {{ l.cantidad }}  </td>
+                <td> {{ l.direccion }}  </td>
+                <td> {{ l.fecha_inicio }}  </td>
+                <td> {{ l.fecha_termino }}  </td>
+                <td> {{ l.idproducto.idproducto }}  </td>
+                <td> {{ l.rutopasaporte.rutopasaporte_id }}  </td>
+                <td> {{ l.activo }}  </td>
+
+            </tr>
+
+
+          </tbody>
+
+            {% endfor %}
+
+        </thead>
+
+
+        </table>
+
+
+
+
+
+
+
+</div>
+
+</center>
+
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'BaseProductor.html' %}
+{% block content %}
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+<div align="center">
+
+    <form method="POST">
+
+        <label> Producto </label>
+    <select name="producto">
+
+        {% for p in productos %}
+
+            <option value= {{ p.idproducto }} selected> {{ p.producto }} </option>
+
+        {% endfor %}
+    </select>
+    <br>
+    <br>
+    <label>  Cantidad  </label>
+    <input type="number" name="cantidad">
+    <br>
+    <br>
+    <label> Precio por unidad </label>
+    <input type="number" name="precio">
+    <br>
+    <br>
+    <button type="submit"> Ingresar </button>
+
+    </form>
+
+</div>
+
+
+
+
+
+{% endblock %}

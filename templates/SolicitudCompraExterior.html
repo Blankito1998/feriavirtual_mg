@@ -1,0 +1,148 @@
+{% extends 'BaseAdministrador.html' %}
+{% block content %}
+
+    <br>
+    <br>
+    <br>
+    <form method="POST">
+
+        {% csrf_token %}
+
+
+    <br>
+    <input type="number" name="idSolcitud" style="float: right">
+    <label style="float: right"> Ingrese id Solicitud </label>
+
+
+    <input type="number" name="idProducto" style="float: left">
+    <label style="float: left"> Ingrese id Producto </label>
+    <br>
+       <center> <button type="submit" > Agregar Proceso Venta  </button></center>
+
+
+    </form>
+
+    <form method="GET">
+
+
+     <input type="number" name="idSolcitud2" style="float: right">
+    <label style="float: right"> Buscar Solicitud </label>
+
+        <button type="submit" style="float: right"> Buscar cliente  </button>
+
+    <input type="number" name="idProducto2" style="float: left">
+    <label style="float: left"> Buscar Producto </label>
+    <button type="submit"  style="float: left"> buscar producto  </button>
+
+
+
+
+
+
+    </form>
+
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+<div>
+        {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+        {% endif %}
+        <br>
+        <br>
+        <br>
+        <table class="table table-dark" style="width:400px ;height: 400px; float: left">
+
+            <thead>
+          <tr>
+              <th>Id Ingreso Producto</th>
+              <th>Precio por unidad</th>
+              <th>Cantidad</th>
+              <th>Id Producto</th>
+              <th>Rut / Pasaporte</th>
+              <th> Activo </th>
+          </tr>
+
+            {% for p in productos %}
+
+          <tbody>
+            <tr>
+
+                <td> {{ p.idingresoproducto  }}  </td>
+                <td> {{ p.precioporunidad  }}  </td>
+                <td> {{ p.cantidad }}  </td>
+                <td> {{ p.idproducto.idproducto }}  </td>
+                <td> {{ p.rutopasaporte_id }}  </td>
+                <td> {{ p.activo}}  </td>
+            </tr>
+
+
+          </tbody>
+
+            {% endfor %}
+
+        </thead>
+
+
+        </table>
+
+
+        <table class="table table-dark" style="width:400px ;height: 400px; float: right">
+
+            <thead>
+          <tr>
+              <th>Id Solicitud</th>
+              <th>Cantidad</th>
+              <th>Direccion</th>
+              <th>Fecha Inicio</th>
+              <th>Fecha Termino</th>
+              <th>Id Producto</th>
+              <th>Rut / Pasaporte</th>
+              <th>Activo</th>
+          </tr>
+
+            {% for l in solicitud %}
+
+          <tbody>
+            <tr>
+
+                <td> {{ l.idsolicitud }}  </td>
+                <td> {{ l.cantidad }}  </td>
+                <td> {{ l.direccion }}  </td>
+                <td> {{ l.fecha_inicio }}  </td>
+                <td> {{ l.fecha_termino }}  </td>
+                <td> {{ l.idproducto.idproducto }}  </td>
+                <td> {{ l.rutopasaporte.rutopasaporte_id }}  </td>
+                <td> {{ l.activo }}  </td>
+
+            </tr>
+
+
+          </tbody>
+
+            {% endfor %}
+
+        </thead>
+
+
+        </table>
+
+
+
+
+
+
+
+</div>
+
+
+
+{% endblock %}

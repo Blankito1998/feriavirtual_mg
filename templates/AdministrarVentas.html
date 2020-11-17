@@ -1,0 +1,59 @@
+{% extends 'BaseAdministrador.html' %}
+{% load static %}
+{% block content %}
+
+
+    <table width="100%" border="0" cellpadding="2">
+    <tr>
+
+        <td>
+              <a class="button btnSalir" href="{% url 'solicitudCompraExterior' %}">
+              <img  src="{% static 'image/proceso.png' %}" style="width:300px;">
+            </a>
+        </td>
+        <td>
+              <a class="button btnSalir" href="{% url 'solicitudCompraInterior' %}">
+              <img  src="{% static 'image/proceso.png' %}" style="width:300px;">
+            </a>
+        </td>
+        <td>
+              <a class="button btnSalir" href="{% url 'solicitudCompraTodos' %}">
+              <img  src="{% static 'image/proceso.png' %}" style="width:300px;">
+            </a>
+        </td>
+
+         <td>
+              <a class="button btnSalir" href="{% url 'listarProductor' %}">
+              <img  src="{% static 'image/proceso.png' %}" style="width:300px;">
+            </a>
+        </td>
+
+    </tr>
+    <tr>
+         <td>
+            Presiona la imagen de arriba para ver procesos de venta Externos
+
+
+        </td>
+
+
+        <td>
+            Presiona la imagen de arriba para ver procesos de venta Internos
+
+
+        </td>
+        <td>
+            Presiona la imagen de arriba para ver todas las solicitudes de compra activas
+
+
+        </td>
+        <td>
+            Presiona la imagen de arriba para ver todos los productos
+
+
+        </td>
+    </tr>
+    </table>
+
+
+{% endblock %}

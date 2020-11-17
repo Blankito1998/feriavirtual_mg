@@ -1,0 +1,36 @@
+{% extends 'Login.html' %}
+
+{% block content %}
+
+
+    <form class="formulario" method="POST">
+	{% csrf_token %}
+	<h2>Olvido su contraseña? </h2>
+	<br>
+	<div class="contenedor">
+
+	<div class="input-user">
+
+		<label> Ingrese su correo: </label>
+		<input type="email"  name="mail" placeholder="correo@gmail.com">
+	</div>
+
+        {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+        {% endif %}
+
+
+	<br>
+	<br>
+	</div>
+	<button type="submit" class="btn btn-secondary">Enviar</button>
+
+
+</form>
+
+
+{% endblock %}
